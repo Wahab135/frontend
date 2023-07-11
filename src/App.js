@@ -1,5 +1,6 @@
 import HelloWorld from "./components/helloWorld.js";
 import Button from "./components/button.js";
+import axios from 'axios';
 import "./App.css";
 import { useState } from "react";
 function App() {
@@ -11,6 +12,9 @@ function App() {
       name: name,
       price: price,
     };
+    axios.post('https://zs4nz2-3005.csb.app/enter',data)
+    .then(console.log("Success"))
+    .catch((e)=>(console.log(e.message)))
   };
 
   return (
